@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Set up Environment
-        run: echo "Setting up environment"
+        run: echo '${{ toJSON(github.event) }}'
 
       - name: Printing Great Message
         run: |
