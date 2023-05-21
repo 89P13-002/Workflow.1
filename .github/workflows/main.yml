@@ -1,0 +1,27 @@
+name: Great on issue
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - closed
+
+jobs:
+  great_message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Environment
+        run: echo "Setting up environment"
+
+      - name: Printing Great Message
+        run: |
+          if [[ "${{ github.event.action }}" == "opened" ]]; then
+            echo "Hello, great! You opened a new issue."
+          elif [[ "${{ github.event.action }}" == "edited" ]]; then
+            echo "Hey, great! You edited an issue."
+          elif [[ "${{ github.event.action }}" == "closed" ]]; then
+            echo "Well done! You closed an issue. Great job!"
+          else
+            echo "Hello there!"
+          fi
