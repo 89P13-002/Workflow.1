@@ -25,3 +25,6 @@ jobs:
           else
             echo "Hello there!"
           fi
+
+      - name: Last task
+        run: echo "Thanks for your contribution"
